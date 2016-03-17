@@ -44,8 +44,16 @@ HINT: Swift won't let you modify a and b, but the pseodocode modifies them, so h
 Just uncomment the following two lines to get started.
 */
 
-//func gcd(a: Int, b: Int) -> Int {
-//}
+func gcd(a: Int, b: Int) -> Int {
+    var aVar = a
+    var bVar = b
+    while bVar > 0 {
+        let temp = bVar
+        bVar = aVar % bVar
+        aVar = temp
+    }
+    return aVar
+}
 
 /*:
 ## Unit Tests
